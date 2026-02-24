@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo 2', cursive;
+}
+
+/* Top Announcement Bar */
+.top-bar {
+  background-color: #F18888;
+  color: #333;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+/* Main Header */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: relative;
+}
+
+/* Hamburger */
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #333;
+  z-index: 1100;
+}
+
+.close-btn:hover {
+  color: #F18888;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;   /* IMPORTANT: hides it */
+  width: 280px;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  padding: 80px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+/* When active (visible) */
+.side-menu.active {
+  left: 0;
+}
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  padding-left: 15px;
+  gap: 10px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  color: #F18888;
+}
+.simple-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  padding: 10px 0;
+  display: block;
+}
+
+.simple-link:hover {
+  color: #F18888;
+}
+
+/* Sub dropdown indent */
+.dropdown-content.sub {
+  padding-left: 20px;
+}
+
+/* Center Logo */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+/* Right Icons */
+.nav-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav-icons i:hover,
+.menu-icon i:hover {
+  color: #F18888;
+}
+
+.hero {
+  width: 100%;
+  height: 400px;
+  background-image: url("img/hero.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.product-section {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Wrapper around carousel + arrows */
+.carousel-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Container hides overflow so cards stay in view */
+.product-carousel-container {
+  overflow: hidden;
+}
+
+/* Flex carousel */
+.product-carousel {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+/* Cards sizing & style */
+.product-card {
+  flex: 0 0 calc(25% - 22.5px); /* 4 cards visible, account for gap */
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Image box */
+.image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Both images stacked for hover swap */
+.image-box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  transition: opacity 0.4s ease;
+}
+
+/* Front image visible */
+.img-front {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Back image hidden */
+.img-back {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* On card hover, fade front out, back in */
+.product-card:hover .img-front {
+  opacity: 0;
+}
+
+.product-card:hover .img-back {
+  opacity: 1;
+}
+
+/* Text styles */
+.category {
+  font-size: 13px;
+  color: #555;
+  margin: 12px 0 4px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+
+.price {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Carousel arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  padding: 0;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.carousel-btn.prev {
+  left: -50px;  /* outside carousel */
+}
+
+.carousel-btn.next {
+  right: -50px; /* outside carousel */
+}
+
+.carousel-btn:hover {
+  color: #F18888;
+}
+
+/* view-more Button */
+.view-more-btn-container {
+  text-align: center;
+}
+.view-more-btn {
+    font-family: 'Baloo 2';
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 60px;
+    background-color: #F18888;
+    border-radius: 10px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 3px 6px 6px 0 rgba(0, 0, 0, 0.40);
+    text-decoration: none;
+}
+
+/* Text */
+.btn-text {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+/* Line behind text */
+.line {
+    position: absolute;
+    height: 2px;
+    background: #333;
+    width: 0;
+    left: 50%; /* start in middle of text */
+    top: 50%;
+    transform: translateX(-50%) translateY(-40%);
+    z-index: 1;
+    transition: width 0.1s ease 0.1s; /* delay so pencil moves first */
+}
+
+/* Pencil */
+.view-more-btn i {
+    position: absolute;
+    left: calc(50% - 50px); /* start slightly left of text */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.4s ease;
+    z-index: 3;
+}
+
+/* Hover effects */
+.view-more-btn:hover i {
+    left: calc(50% + 50px); /* move across text to right */
+}
+
+.view-more-btn:hover .line {
+    width: 60px; /* same as text width */
+}
+
+/* service viewmore here white button with line below */
+.view-more-btn.view-more-btn-white {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 3px 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.view-more-btn.view-more-btn-white .line {
+    background: #333;
+}
+.service-section {
+  display: flex;
+  min-height: 350px;
+  max-width: 1100px;
+  margin: 100px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Left side - slideshow container */
+.service-left {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;;
+  min-width: 300px;
+}
+
+/* Slides stacked, only one visible at a time */
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 15px;
+}
+
+/* Active slide visible */
+.slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Right side with pink background */
+.service-right {
+  flex: 1 1 50%;
+  background-color: #F18888;
+  padding: 40px 30px;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.service-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.service-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.service-btn {
+  align-self: flex-start;
+  background-color: white;
+  color: #F18888;
+  border: none;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #e06f6f;
+  color: white;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column;
+  }
+
+  .service-left,
+  .service-right {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
+  .service-right {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .service-btn {
+    align-self: center;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  color: #333;
+  padding: 30px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f0d4d4;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-social {
+  text-align: right;
+}
+
+.footer-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  margin: 0 5px;
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #F18888; /* Example hover color */
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-social {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meowstermind.co</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+</head>
+  
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    Enjoy free shipping on orders over 1,000 pesos!
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">&times;</div>
+
+  <!-- NAVIGATION 1 -->
+  <div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown('menu1')">
+      Products ▾
+    </button>
+
+    <div class="dropdown-content" id="menu1">
+      
+      <!-- Sub Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown('submenu1')">
+          Stickers ▾
+        </button>
+
+        <div class="dropdown-content sub" id="submenu1">
+          <a href="#">Original Stickers</a>
+          <a href="#">Character Stickers</a>
+        </div>
+      </div>
+
+      <a href="#">Bookmarks</a>
+      <a href="#">Keychains</a>
+      <a href="#">Polaroid-style Pictures</a>
+
+    </div>
+  </div>
+
+  <!-- NAVIGATION 2 -->
+  <div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown('menu2')">
+      Services ▾
+    </button>
+
+    <div class="dropdown-content" id="menu2">
+      <a href="#">Gifts/Souvenirs</a>
+      <a href="#">Product Packaging</a>
+    </div>
+  </div>
+
+    <!-- Simple Navigation Links (No Dropdown) -->
+    <a href="#" class="simple-link">FAQ</a>
+    <a href="#" class="simple-link">About Us <br>(Meet our Meowsterminds)</a>
+</div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    
+    <!-- Left: Hamburger -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="logo">
+        <img src="img/circle logo.svg" alt="Logo">
+    </div>
+
+    <!-- Right: Navigation Icons -->
+    <div class="nav-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-shopping-basket"></i>
+      <i class="fas fa-user"></i>
+    </div>
+  </header>
+
+    <section class="hero"></section>
+
+    <section class="product-section">
+        <h2 class="section-title">Products</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="product-carousel-container">
+            <div class="product-carousel">
+
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                <div class="image-box">
+                    <img src="img/IMG_0312.JPG" alt="Product 1" class="img-front" />
+                    <img src="img/IMG_0319.JPG" alt="Product 1 Hover" class="img-back" />
+                </div>
+                <p class="category">Original Sticker</p>
+                <h3 class="product-name">Stickers Name</h3>
+                <p class="price">₱ 25.00</p>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                <div class="image-box">
+                    <img src="img/IMG_0314.JPG" alt="Product 2" class="img-front" />
+                    <img src="img/IMG_0321.JPG" alt="Product 2 Hover" class="img-back" />
+                </div>
+                <p class="category">Keychains</p>
+                <h3 class="product-name">Stickers Name</h3>
+                <p class="price">₱ 25.00</p>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                <div class="image-box">
+                    <img src="img/IMG_0316.JPG" alt="Product 3" class="img-front" />
+                    <img src="img/IMG_0317.JPG" alt="Product 3 Hover" class="img-back" />
+                </div>
+                <p class="category">Original Sticker</p>
+                <h3 class="product-name">Stickers Name</h3>
+                <p class="price">₱ 25.00</p>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                <div class="image-box">
+                    <img src="img/IMG_0318.JPG" alt="Product 4" class="img-front" />
+                    <img src="img/IMG_0322.JPG" alt="Product 4 Hover" class="img-back" />
+                </div>
+                <p class="category">Original Sticker</p>
+                <h3 class="product-name">Stickers Name</h3>
+                <p class="price">₱ 25.00</p>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                <div class="image-box">
+                    <img src="img/IMG_0326.JPG" alt="Product 4" class="img-front" />
+                    <img src="img/IMG_0325.JPG" alt="Product 4 Hover" class="img-back" />
+                </div>
+                <p class="category">Original Sticker</p>
+                <h3 class="product-name">Stickers Name</h3>
+                <p class="price">₱ 25.00</p>
+                </div>
+                <!-- Add more product cards here if needed -->
+
+            </div>
+            </div>
+
+            <button class="carousel-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+
+        </div>
+    </section>
+
+        <div class="view-more-btn-container">
+            <button class="view-more-btn">
+                <span class="btn-text">View more</span>
+                <span class="line"></span>
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+        </div>
+            
+    <section class="service-section">
+
+        <div class="service-left">
+            <div class="slideshow">
+            <img src="img/IMG_0333.JPG" alt="Service Image 1" class="slide active" />
+            <img src="img/IMG_0332.JPG" alt="Service Image 2" class="slide" />
+            <img src="img/IMG_0331.JPG" alt="Service Image 3" class="slide" />
+            <!-- Add more images here -->
+            </div>
+        </div>
+
+        <div class="service-right">
+            <h2 class="service-title">Featured Services</h2>
+            <p class="service-description">
+            Got an idea for event souvenirs, gifts, or business product branding? Let’s talk — we’ll bring it to life!
+            </p>
+            <div class="view-more-btn-container">
+            <button class="view-more-btn view-more-btn-white">
+                <span class="btn-text">View more</span>
+                <span class="line"></span>
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo -->
+            <div class="footer-logo">
+            <img src="img/circle logo.svg" alt="Company Logo" />
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer-social">
+            <p class="footer-text">Let’s keep in touch!</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2025 Meowsterminds.o . All rights reserved.</p>
+        </div>
+        </footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
