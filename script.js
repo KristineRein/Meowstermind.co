@@ -47,3 +47,20 @@ function nextSlide() {
 
 // Change slide every 3 seconds
 setInterval(nextSlide, 3000);
+
+// product drag in responsive
+const container = document.querySelector(".product-carousel-container");
+
+let startX;
+let scrollLeft;
+
+container.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].pageX - container.offsetLeft;
+  scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener("touchmove", (e) => {
+  const x = e.touches[0].pageX - container.offsetLeft;
+  const walk = (x - startX) * 2; 
+  container.scrollLeft = scrollLeft - walk;
+});
