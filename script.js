@@ -30,7 +30,7 @@ function moveSlide(direction) {
 
   carousel.style.transform = `translateX(-${currentIndex * cardsPerView * cardWidth}px)`;
 }
-
+//Service auto-play slider
 const slides = document.querySelectorAll('.slideshow img');
 let currentSlide = 0;
 
