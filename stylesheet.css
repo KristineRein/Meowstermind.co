@@ -132,6 +132,38 @@
 .menu-icon i:hover {
   color: #F18888;
 }
+/* Hide mobile search by default */
+.mobile-search {
+  display: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+/* Desktop search inside header is visible by default */
+.desktop-search {
+  display: inline-block;
+}
+.desktop-search:hover{
+  color:#F18888;
+}
+
+/* By default, hide mobile-only content */
+.mobile-only {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
+  /* Hide header search on mobile */
+  .desktop-search {
+    display: none !important;
+  }
+}
 
 .hero {
   width: 100%;
