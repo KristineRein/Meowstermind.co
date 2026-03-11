@@ -22,8 +22,16 @@
   <div class="side-menu" id="sideMenu">
   <div class="close-btn" onclick="closeMenu()">&times;</div>
 
+    <!-- Mobile Search inside menu -->
+  <div class="mobile-search" id="mobileSearchContainer">
+    <form id="mobileSearchForm">
+      <input type="text" id="mobileSearchInput" placeholder="Search products..." required>
+      <button type="submit" class="btn-primary">Go</button>
+    </form>
+  </div>
+  
     <!-- Mobile-only search -->
-  <div class="mobile-only">
+  <div class="mobile-only" id="mobileSearchIcon">
     <i class="fas fa-search"></i>
   </div>
 
@@ -124,14 +132,31 @@
 
     <!-- Right: Navigation Icons -->
     <div class="nav-icons">
-      <i class="fas fa-search desktop-search"></i>
-      <i class="fas fa-shopping-basket"></i>
+      <i class="fas fa-search desktop-search" id="searchIcon"></i>
+      <i class="fas fa-shopping-basket" id="cartIcon"></i>
       <i class="fas fa-user" id="userIcon"></i>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-menu" id="cartMenu">
+      <div class="close-btn" id="closeCart">&times;</div>
+      <h2>Your Cart</h2>
+      <div id="cartItems">
+        <p>No items in your cart.</p>
+      </div>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+    <!-- For search icon -->
+    <div id="headerSearch" class="header-search">
+      <form id="headerSearchForm">
+        <input type="text" id="headerSearchInput" placeholder="Search products..." required>
+        <button type="submit" class="btn-primary">Go</button>
+      </form>
     </div>
   </header>
 
+    <!-- Hero section and Products -->
     <section class="hero"></section>
-
     <section class="product-section">
         <h2 class="section-title">Products</h2>
         <div class="carousel-wrapper">

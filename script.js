@@ -78,6 +78,129 @@ window.addEventListener("click", function(e){
   if(e.target === loginModal) loginModal.style.display = "none";
 });
 
+// Get cart elements
+const cartMenu = document.getElementById("cartMenu");
+const cartIcon = document.getElementById("cartIcon");
+const closeCart = document.getElementById("closeCart");
+
+// Open cart
+cartIcon.addEventListener("click", function(){
+  cartMenu.classList.add("active");
+});
+
+// Close cart
+closeCart.addEventListener("click", function(){
+  cartMenu.classList.remove("active");
+});
+
+// Close cart if clicking outside
+window.addEventListener("click", function(e){
+  if(e.target === cartMenu) cartMenu.classList.remove("active");
+});
+
+// This is just a fake database for frontend use purposes for now
+const productsDB = [
+  { id: 1, name: "Original Stickers", category: "Stickers", price: 100 },
+  { id: 2, name: "Character Stickers", category: "Stickers", price: 120 },
+  { id: 3, name: "Bookmarks", category: "Accessories", price: 80 },
+  { id: 4, name: "Keychains", category: "Accessories", price: 150 },
+  { id: 5, name: "Polaroid-style Pictures", category: "Prints", price: 200 },
+  { id: 6, name: "Gift Box Packaging", category: "Services", price: 250 },
+  { id: 7, name: "Custom Souvenir", category: "Services", price: 300 }
+];
+
+//Search function
+function searchProducts(query) {
+  const lowerQuery = query.toLowerCase();
+  // Filter products whose name or category contains the query
+  return productsDB.filter(product => 
+    product.name.toLowerCase().includes(lowerQuery) || 
+    product.category.toLowerCase().includes(lowerQuery)
+  );
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const searchIcon = document.getElementById("searchIcon");
+  const headerSearch = document.getElementById("headerSearch");
+  const searchInput = document.getElementById("headerSearchInput");
+
+  // Toggle search bar when search icon is clicked
+  searchIcon.addEventListener("click", function(e) {
+    e.stopPropagation(); // Prevent the click from bubbling
+    if(headerSearch.style.display === "flex") {
+      headerSearch.style.display = "none";
+    } else {
+      headerSearch.style.display = "flex";
+      searchInput.focus();
+    }
+  });
+
+  // Close search bar when clicking anywhere outside
+  window.addEventListener("click", function(e) {
+    if(headerSearch.style.display === "flex" && !headerSearch.contains(e.target) && e.target !== searchIcon) {
+      headerSearch.style.display = "none";
+    }
+  });
+
+  // Optional: also prevent closing when clicking inside the input
+  headerSearch.addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const mobileSearchIcon = document.getElementById("mobileSearchIcon");
+  const mobileSearchContainer = document.getElementById("mobileSearchContainer");
+  const mobileSearchInput = document.getElementById("mobileSearchInput");
+  const sideMenu = document.getElementById("sideMenu");
+
+  // Toggle search input when icon is clicked
+  mobileSearchIcon.addEventListener("click", function(e) {
+    e.stopPropagation(); // prevent bubbling
+    if(!sideMenu.classList.contains("active")) {
+      sideMenu.classList.add("active");
+    }
+
+    if(mobileSearchContainer.style.display === "flex") {
+      mobileSearchContainer.style.display = "none";
+      mobileSearchIcon.style.display = "flex";
+    } else {
+      mobileSearchContainer.style.display = "flex";
+      mobileSearchInput.focus();
+      mobileSearchIcon.style.display = "none";
+    }
+  });
+
+  // Handle search submit
+  const mobileSearchForm = document.getElementById("mobileSearchForm");
+  mobileSearchForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const query = mobileSearchInput.value.trim();
+    if(!query) return;
+
+    window.location.href = "search.html?q=" + encodeURIComponent(query);
+
+    // Reset menu and search
+    sideMenu.classList.remove("active");
+    mobileSearchContainer.style.display = "none";
+    mobileSearchIcon.style.display = "flex";
+  });
+
+  // Close mobile search when clicking outside
+  window.addEventListener("click", function(e) {
+    if(
+      mobileSearchContainer.style.display === "flex" &&
+      !mobileSearchContainer.contains(e.target) && 
+      e.target !== mobileSearchIcon
+    ) {
+      mobileSearchContainer.style.display = "none";
+      mobileSearchIcon.style.display = "flex";
+    }
+  });
+
+  // Prevent clicks inside search container from closing it
+  mobileSearchContainer.addEventListener("click", function(e){
+    e.stopPropagation();
+  });
+});
 
 // Product Carousel
 let currentIndex = 0;

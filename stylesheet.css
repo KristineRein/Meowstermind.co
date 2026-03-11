@@ -273,6 +273,125 @@ form input {
 .signup-text a:hover {
   color: #e06666;
 }
+/* Addu to cartu starts here */
+.cart-menu {
+  position: fixed;
+  top: 0;
+  right: -320px; /* hidden by default */
+  width: 320px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  padding: 80px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.cart-menu.active {
+  right: 0; /* visible */
+}
+
+.cart-menu h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+#cartItems {
+  flex: 1;
+  overflow-y: auto;
+}
+
+#cartItems p {
+  font-size: 16px;
+  color: #555;
+}
+
+#checkoutBtn {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #F18888;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#checkoutBtn:hover {
+  background-color: #e06666;
+}
+
+/* Close button */
+.cart-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.cart-menu .close-btn:hover {
+  color: #F18888;
+}
+
+/*Search button*/
+#headerSearch {
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 85px; /* adjust for header height */
+  right: 40px; /* near search icon */
+  background: white;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex-direction: row;
+  gap: 5px;
+  z-index: 1500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/*Mobile search button*/
+.mobile-search {
+  display: none; /* hide initially */
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.mobile-search input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.mobile-search button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #F18888;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-search button:hover {
+  background-color: #e06666;
+}
+/* Search bar style for mobile */
+@media screen and (max-width: 768px) {
+  #headerSearch {
+    top: 50px; /* adjust for smaller header height */
+    right: 10px; /* smaller margin */
+    width: calc(100% - 20px); /* almost full width */
+    flex-direction: row;
+  }
+
+  #headerSearch input {
+    flex: 1; /* input stretches */
+  }
+}
 
 
 /*hero starts here*/
