@@ -43,6 +43,41 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
   loginModal.style.display = "none";
 });
 
+// Get modals
+const signupModal = document.getElementById("signupModal");
+
+// Close button for Sign Up modal
+signupModal.querySelector(".close-modal").addEventListener("click", function(){
+  signupModal.style.display = "none";
+});
+
+// Open Sign Up modal from login modal link
+document.getElementById("openSignup").addEventListener("click", function(e){
+  e.preventDefault();
+  loginModal.style.display = "none";
+  signupModal.style.display = "block";
+});
+
+// Switch back to login from Sign Up modal
+document.getElementById("switchToLogin").addEventListener("click", function(e){
+  e.preventDefault();
+  signupModal.style.display = "none";
+  loginModal.style.display = "block";
+});
+
+// Optional: handle signup form submit
+document.getElementById("signupForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Sign Up submitted! Replace with actual signup logic.");
+  signupModal.style.display = "none";
+});
+
+// Optional: close modals when clicking outside
+window.addEventListener("click", function(e){
+  if(e.target === signupModal) signupModal.style.display = "none";
+  if(e.target === loginModal) loginModal.style.display = "none";
+});
+
 
 // Product Carousel
 let currentIndex = 0;
