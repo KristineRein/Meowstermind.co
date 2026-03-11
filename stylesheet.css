@@ -113,7 +113,7 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 20px 40px; /* adjust spacing */
+  padding: 20px 40px;
 }
 .logo {
   position: absolute;
@@ -122,21 +122,29 @@ header {
   height: auto;
 }
 .logo img {
+  height: 70px;   /* desktop size */
   width: auto;
-  height: 20vh;
   display: block;
 }
 
-/* Tablet logo */
-@media screen and (max-width: 1024px) {
+/* Large desktop */
+@media (min-width: 1200px) {
   .logo img {
-    height: 30vh; /* slightly bigger relative to tablet screen */
+    height: 90px;
   }
 }
-/* Mobile logo */
-@media screen and (max-width: 768px) {
+
+/* Tablet */
+@media (max-width: 1024px) {
   .logo img {
-    height: 20vh; /* bigger proportionally for small screens */
+    height: 70px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo img {
+    height: 60px;
   }
 }
 /* Right Icons */
