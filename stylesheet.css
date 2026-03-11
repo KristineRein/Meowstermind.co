@@ -108,17 +108,36 @@
 }
 
 /* Center Logo */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 40px; /* adjust spacing */
+}
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px;
-  font-weight: bold;
+  height: auto;
 }
 .logo img {
-  height: 60px;
   width: auto;
+  height: 20vh;
   display: block;
+}
+
+/* Tablet logo */
+@media screen and (max-width: 1024px) {
+  .logo img {
+    height: 30vh; /* slightly bigger relative to tablet screen */
+  }
+}
+/* Mobile logo */
+@media screen and (max-width: 768px) {
+  .logo img {
+    height: 20vh; /* bigger proportionally for small screens */
+  }
 }
 /* Right Icons */
 .nav-icons {
