@@ -14,6 +14,37 @@
     menu.style.display =
       menu.style.display === "flex" ? "none" : "flex";
   }
+
+// Get modal and close button
+const loginModal = document.getElementById("loginModal");
+const closeModal = loginModal.querySelector(".close-modal");
+
+// Open modal when user icon clicked
+document.getElementById("userIcon").addEventListener("click", function() {
+  loginModal.style.display = "block";
+});
+
+// Close modal when clicking X
+closeModal.addEventListener("click", function(){
+  loginModal.style.display = "none";
+});
+
+// Close modal when clicking outside modal content
+window.addEventListener("click", function(e){
+  if(e.target === loginModal){
+    loginModal.style.display = "none";
+  }
+});
+
+// Optional: handle form submit
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Login submitted! Replace with real login logic.");
+  loginModal.style.display = "none";
+});
+
+
+// Product Carousel
 let currentIndex = 0;
 
 function moveSlide(direction) {
