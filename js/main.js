@@ -1,42 +1,25 @@
-// Load header
-fetch("/partials/header.html")
+// Detect if running on GitHub Pages
+const isGitHub = window.location.hostname.includes("github.io");
+const basePath = isGitHub ? "/Meowstermind.co/" : "/";
+
+// ===== LOAD HEADER =====
+fetch(basePath + "partials/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
-
-    // IMPORTANT: re-run header scripts after load
-    initHeaderScripts();
+    initHeaderScripts(); // run AFTER load
   });
 
-// Load footer
-fetch("/partials/footer.html")
+// ===== LOAD FOOTER =====
+fetch(basePath + "partials/footer.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
 
-/* -----------------------------
-   Put ALL your header JS here
-------------------------------*/
-function initHeaderScripts() {
-
-  // menu toggle
-  window.toggleMenu = function () {
-    document.getElementById("sideMenu").classList.add("active");
-  };
-
-  window.closeMenu = function () {
-    document.getElementById("sideMenu").classList.remove("active");
-  };
-
-  // dropdowns
-  window.toggleDropdown = function (id) {
-    document.getElementById(id).classList.toggle("show");
-  };
-
-  // cart, search, modals etc...
-}
-
+/* =============================
+   HEADER FUNCTIONS (ONLY ONCE)
+============================= */
 function initHeaderScripts() {
 
   // ===== NAVBAR =====
