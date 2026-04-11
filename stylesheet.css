@@ -64,6 +64,11 @@
 .side-menu.active {
   left: 0;
 }
+.side-menu a {
+  text-decoration: none;
+}
+
+
 .dropdown-btn {
   background: none;
   border: none;
@@ -120,6 +125,10 @@ header {
   left: 50%;
   transform: translateX(-50%);
   height: auto;
+}
+.logo a {
+  display: inline-block;
+  cursor: pointer;
 }
 .logo img {
   height: 70px;   /* desktop size */
@@ -843,4 +852,86 @@ form input {
     margin-top: 15px;
   }
 
+}
+
+
+
+/* ===== PAGE WRAPPER ===== */
+.original-sticker-page .page-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* ===== PRODUCT GRID ===== */
+.original-sticker-page .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  justify-content: center;
+
+  width: fit-content;
+  margin: 0 auto;
+}
+/* ===== PRODUCT CARD ===== */
+.original-sticker-page .product-card {
+  width: 250px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== IMAGE BOX ===== */
+.original-sticker-page .image-box {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* images */
+.original-sticker-page .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+/* hover image */
+.original-sticker-page .img-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* hover effect */
+.original-sticker-page .image-box:hover .img-back {
+  opacity: 1;
+}
+
+.original-sticker-page .image-box:hover .img-front {
+  opacity: 0;
+}
+
+/* text */
+.original-sticker-page .category {
+  font-size: 13px;
+  color: #555;
+  margin: 12px 0 4px;
+}
+
+.original-sticker-page .product-name {
+      font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 6px;
+}
+
+.original-sticker-page .price {
+  font-weight: bold;
 }

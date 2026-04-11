@@ -1,0 +1,142 @@
+    <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    Enjoy free shipping on orders over 1,000 pesos!
+  </div>
+
+  <div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="closeMenu()">&times;</div>
+
+    <!-- Mobile Search inside menu -->
+  <div class="mobile-search" id="mobileSearchContainer">
+    <form id="mobileSearchForm">
+      <input type="text" id="mobileSearchInput" placeholder="Search products..." required>
+      <button type="submit" class="btn-primary">Go</button>
+    </form>
+  </div>
+  
+    <!-- Mobile-only search -->
+  <div class="mobile-only" id="mobileSearchIcon">
+    <i class="fas fa-search"></i>
+  </div>
+
+    <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email-login" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn-primary">Log In</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="openSignup">Sign Up</a></p>
+    </div>
+  </div>
+
+    <!-- Sign Up Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email-signup" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password-signup" name="password" required>
+
+        <button type="submit" class="btn-primary">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="switchToLogin">Log In</a></p>
+    </div>
+  </div>
+
+
+    <!-- NAVIGATION 1 -->
+  <div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown('menu1')">
+      Products ▾
+    </button>
+
+    <div class="dropdown-content" id="menu1">
+      
+      <!-- Sub Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown('submenu1')">
+          Stickers ▾
+        </button>
+
+        <div class="dropdown-content sub" id="submenu1">
+          <a href="stickers-original.html">Original Stickers</a>
+          <a href="#">Character Stickers</a>
+        </div>
+      </div>
+
+      <a href="#">Bookmarks</a>
+      <a href="#">Keychains</a>
+      <a href="#">Polaroid-style Pictures</a>
+
+    </div>
+  </div>
+
+  <!-- NAVIGATION 2 -->
+  <div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown('menu2')">
+      Services ▾
+    </button>
+
+    <div class="dropdown-content" id="menu2">
+      <a href="#">Gifts/Souvenirs</a>
+      <a href="#">Product Packaging</a>
+    </div>
+  </div>
+
+    <!-- Simple Navigation Links (No Dropdown) -->
+    <a href="#" class="simple-link">FAQ</a>
+    <a href="#" class="simple-link">About Us <br>(Meet our Meowsterminds)</a>
+</div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    
+    <!-- Left: Hamburger -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/circle logo.svg" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Right: Navigation Icons -->
+    <div class="nav-icons">
+      <i class="fas fa-search desktop-search" id="searchIcon"></i>
+      <i class="fas fa-shopping-basket" id="cartIcon"></i>
+      <i class="fas fa-user" id="userIcon"></i>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-menu" id="cartMenu">
+      <div class="close-btn" id="closeCart">&times;</div>
+      <h2>Your Cart</h2>
+      <div id="cartItems">
+        <p>No items in your cart.</p>
+      </div>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+    <!-- For search icon -->
+    <div id="headerSearch" class="header-search">
+      <form id="headerSearchForm">
+        <input type="text" id="headerSearchInput" placeholder="Search products..." required>
+        <button type="submit" class="btn-primary">Go</button>
+      </form>
+    </div>
+  </header>
