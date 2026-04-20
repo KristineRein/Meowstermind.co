@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+</head>
+
+  <!-- HEADER LOAD -->
+  <div id="header"></div>
+
+<main class="product-page">
+
+  <section class="product-container">
+    <!-- LEFT: GALLERY -->
+    <div class="product-gallery">
+  <div class="left-images">
+    <img src="img/IMG_0571.jpg" alt="">
+    <img src="img/IMG_0524.jpg" alt="">
+  </div>
+
+  <div class="right-image">
+    <img src="img/IMG_0576.jpg" alt="Main">
+  </div>
+
+</div>
+
+    <!-- RIGHT: DETAILS -->
+    <div class="product-details">
+
+      <h2 class="product-title">Product Name</h2>
+      <p class="product-description">
+        Product description goes here...
+      </p>
+      <p class="product-stock">In stock</p>
+      <p class="product-price">₱ 0.00</p>
+
+      <!-- QUANTITY -->
+      <div class="quantity">
+        <button class="qty-minus">-</button>
+        <input type="number" value="1" min="1">
+        <button class="qty-plus">+</button>
+      </div>
+
+      <!-- ADD TO CART -->
+      <button class="add-to-cart">
+        <i class="fa fa-shopping-cart"></i> Add to Cart
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="related-products">
+    <h3 class="related-title">You may also like</h3>
+
+    <div class="carousel">
+
+      <button class="arrow left">&#10094;</button>
+      <div class="carousel-track">
+        <div class="related-card">
+          <img src="img/IMG_0576.jpg" alt="">
+          <p>Original Sticker</p>
+          <h4>Sticker Name</h4>
+          <span>₱ 25.00</span>
+        </div>
+
+        <div class="related-card">
+          <img src="img/IMG_0576.jpg" alt="">
+          <p>Original Sticker</p>
+          <h4>Sticker Name</h4>
+          <span>₱ 25.00</span>
+        </div>
+
+        <div class="related-card">
+          <img src="img/IMG_0576.jpg" alt="">
+          <p>Original Sticker</p>
+          <h4>Sticker Name</h4>
+          <span>₱ 25.00</span>
+        </div>
+
+        <div class="related-card">
+          <img src="img/IMG_0576.jpg" alt="">
+          <p>Original Sticker</p>
+          <h4>Sticker Name</h4>
+          <span>₱ 25.00</span>
+        </div>
+
+      </div>
+      <button class="arrow right">&#10095;</button>
+
+    </div>
+
+  </section>
+
+</main>
+
+  <!-- FOOTER LOAD -->
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
